@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    border: 10px solid #86c9bc;
+    width: 400px;
+    height: 85vh;
+    background-color: #072538;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+}
+
+.screen {
+    width: 95%;
+    height: 15%;
+    background-color: #dae7e3;
+    color: rgb(43, 36, 36);
+    font-size: 2em; /* ORTAK BOYUT KULLANILIYOR */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #fff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Sayılar ve işlemler */
+.inner-box {
+    flex: 1;
+    display: flex;
+    gap: 3px;
+}
+
+.inner-item, .special-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: #f1c40f;*/
+    border: 1px solid #86c9bc;
+    font-size: 18px;
+    color: black;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600; 
+}
+
+.blue {
+    background-color: #4ca5fc;
+}
+
+.orange {
+    background-color: #FF8F1F;
+}
+.number {
+    background-color: #217C7E;
+}
+
+/* Özel satır için ayarlamalar */
+.special-row {
+    display: flex;
+    gap: 3px;
+}
+
+.special-item:nth-child(1) {
+    flex: 2;
+    /*background-color: #e74c3c;*/
+}
