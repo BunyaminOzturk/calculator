@@ -22,7 +22,7 @@ document.querySelectorAll('.number').forEach(button => {
             scrArr += button.id;
             displayNum = scrArr;
             screen.textContent = displayNum;
-            console.log(displayNum)
+            //console.log(displayNum)
         }
         }
     });
@@ -31,15 +31,11 @@ document.querySelectorAll('.number').forEach(button => {
 const plusMinusButton = document.querySelector("#plus-minus");
 plusMinusButton.addEventListener('click', function(displayNum){
     displayNum = Number(scrArr);
-    if((displayNum) > 0){
-        displayNum = (-1) * scrArr;
+     displayNum = (-1) * scrArr;
         scrArr = displayNum.toString();
         screen.textContent = scrArr;
-    } else if((displayNum) < 0){
-        displayNum = (-1) * displayNum;
-        scrArr = displayNum.toString();
-        screen.textContent = scrArr;
-    }
+        //console.log("dispaly num " + displayNum)
+        return displayNum;
 });
 
 const percentButton = document.querySelector("#percent");
@@ -50,3 +46,60 @@ percentButton.addEventListener('click', function(){
     scrArr = displayNum.toString();
     screen.textContent = scrArr;
 });
+
+// Check - arithmetic operator
+function checkMinus(){
+    if(scrArr.includes("-")){
+        return true;
+    } else {
+        return false;
+    }
+}
+// Check + arithmetic operator
+function checkPlus(scrArr){
+    if(scrArr.includes("+")){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Check * arithmetic operator
+function checkMultiply(scrArr){
+    if(scrArr.includes("*")){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Check / arithmetic operator
+function checkDivide(scrArr){
+    if(scrArr.includes("/")){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+var displayNumbers;
+
+const clearButton = document.querySelector("#ac");
+clearButton.addEventListener('click', function(){
+    displayNum = 0;
+    scrArr = "0";
+    screen.textContent = scrArr;
+});
+
+const divideButton = document.querySelector("#divide");
+divideButton.addEventListener('click', function(){
+    if(!checkDivide(scrArr) && scrArr[0] !== "0"){
+        //console.log(checkDivide)
+        console.log(scrArr)
+        scrArr += "/";
+        displayNum = scrArr;
+        screen.textContent = scrArr;
+    } 
+});
+
+
