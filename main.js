@@ -28,17 +28,25 @@ document.querySelectorAll('.number').forEach(button => {
     });
 });
 
-const plusMinusButton = document.querySelector("#plus-minus")
+const plusMinusButton = document.querySelector("#plus-minus");
 plusMinusButton.addEventListener('click', function(displayNum){
-
-    if(Number(scrArr) > 0){
-        displayNum = "-" + scrArr;
-        scrArr = displayNum;
-        console.log(displayNum);
-        screen.textContent = displayNum;
-    } else if(Number(scrArr) < 0){
-        displayNum = scrArr.slice(1);
-        scrArr = displayNum;
-        screen.textContent = displayNum;
+    displayNum = Number(scrArr);
+    if((displayNum) > 0){
+        displayNum = (-1) * scrArr;
+        scrArr = displayNum.toString();
+        screen.textContent = scrArr;
+    } else if((displayNum) < 0){
+        displayNum = (-1) * displayNum;
+        scrArr = displayNum.toString();
+        screen.textContent = scrArr;
     }
+});
+
+const percentButton = document.querySelector("#percent");
+percentButton.addEventListener('click', function(){
+    displayNum = Number(scrArr);
+    displayNum = (0.01 * displayNum);
+    displayNum = Number(displayNum.toFixed(5));
+    scrArr = displayNum.toString();
+    screen.textContent = scrArr;
 });
