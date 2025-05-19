@@ -28,4 +28,17 @@ document.querySelectorAll('.number').forEach(button => {
     });
 });
 
+const plusMinusButton = document.querySelector("#plus-minus")
+plusMinusButton.addEventListener('click', function(displayNum){
 
+    if(Number(scrArr) > 0){
+        displayNum = "-" + scrArr;
+        scrArr = displayNum;
+        console.log(displayNum);
+        screen.textContent = displayNum;
+    } else if(Number(scrArr) < 0){
+        displayNum = scrArr.slice(1);
+        scrArr = displayNum;
+        screen.textContent = displayNum;
+    }
+});
