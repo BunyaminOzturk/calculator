@@ -122,7 +122,6 @@ subtractButton.addEventListener('click', function(){
     displayNum = Number(scrArr);
     if(!checkMultiply(scrArr) && !checkDivide(scrArr) && !checkMinus(scrArr) && displayNum !== 0 && !checkPlus(scrArr)){
         scrArr += "-";
-        
     } else if(displayNum === 0){
         scrArr = "-";
     }
@@ -132,11 +131,15 @@ subtractButton.addEventListener('click', function(){
 const plusButton = document.querySelector("#plus");
 plusButton.addEventListener('click', function(){
     displayNum = Number(scrArr)
-    if(!checkPlus(scrArr) && displayNum !== 0 && !checkDivide(scrArr) && !checkMultiply(scrArr)){
+    if(!checkPlus(scrArr) && displayNum !== 0 && !checkDivide(scrArr) && !checkMultiply(scrArr) && !checkMinus(scrArr)){
         scrArr += "+";
         screen.textContent = scrArr;
-    } else if(displayNum === 0){
+    } if(displayNum === 0){
         scrArr = "0";
+        screen.textContent = scrArr;
+    } if(scrArr.length === 1 && scrArr === "-"){
+        console.log(scrArr);
+        scrArr = "+";
         screen.textContent = scrArr;
     }
     
