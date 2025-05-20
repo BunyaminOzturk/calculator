@@ -8,7 +8,6 @@ This is a simple calculator made with JavaScript.
 
 This project is final project of the JavaScript Foundations section from [The Odin Project](https://www.theodinproject.com/).
 
----
 
 ## What I Used
 
