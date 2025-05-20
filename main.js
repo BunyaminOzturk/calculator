@@ -65,13 +65,13 @@ divideButton.addEventListener('click', function(){
         screen.textContent = scrArr;
     }
 });
-// * button
+// x button
 const multiplyButton = document.querySelector("#multiply");
 multiplyButton.addEventListener('click', function(){
     displayNum = Number(scrArr);
     if(!checkMultiply(scrArr) && !checkDivide(scrArr) && !checkMinus(scrArr) && displayNum !== 0 && !checkPlus(scrArr)){
         scrArr += "*";
-    } else if(displayNum === 0){    // check first num is 0
+    } else if(displayNum === 0){    
         scrArr = "0";
     }
     displayNum = scrArr;
@@ -186,15 +186,6 @@ const multiply = function(num1, num2){
 }
 const divide = function(num1, num2){
     return num1 / num2;
-}
-
-const operate = function(operator, num1, num2){
-    switch(operator){
-        case "+" : return add(num1, num2);
-        case "-" : return subtract(num1, num2);
-        case "*" : return multiply(num1, num2);
-        case "/" : return divide(num1, num2);
-    }
 }
 
 
