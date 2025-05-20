@@ -48,8 +48,10 @@ percentButton.addEventListener('click', function(){
 });
 
 // Check - arithmetic operator
-function checkMinus(){
-    if(scrArr.includes("-")){
+function checkMinus(scrArr){
+    scrArr = scrArr.slice(1);
+    if(scrArr.slice(1).includes("-")){
+        console.log("ilk index ten sonra - işaret var")
         return true;
     } else {
         return false;
@@ -91,15 +93,80 @@ clearButton.addEventListener('click', function(){
     screen.textContent = scrArr;
 });
 
+
 const divideButton = document.querySelector("#divide");
 divideButton.addEventListener('click', function(){
-    if(!checkDivide(scrArr) && scrArr[0] !== "0"){
-        //console.log(checkDivide)
-        console.log(scrArr)
+    displayNum = Number(scrArr);
+    if(!checkDivide(scrArr) && !checkMultiply(scrArr) && !checkMinus(scrArr) && displayNum !== 0 && !checkPlus(scrArr)){
         scrArr += "/";
         displayNum = scrArr;
         screen.textContent = scrArr;
-    } 
+    } else if(displayNum === 0){    // check first num is 0
+        scrArr = "0";
+        screen.textContent = scrArr;
+    }
+});
+const multiplyButton = document.querySelector("#multiply");
+multiplyButton.addEventListener('click', function(){
+    displayNum = Number(scrArr);
+    if(!checkMultiply(scrArr) && !checkDivide(scrArr) && !checkMinus(scrArr) && displayNum !== 0 && !checkPlus(scrArr)){
+        scrArr += "*";
+    } else if(displayNum === 0){    // check first num is 0
+        scrArr = "0";
+    }
+    displayNum = scrArr;
+    screen.textContent = scrArr;
+});
+const subtractButton = document.querySelector("#minus");
+subtractButton.addEventListener('click', function(){
+    displayNum = Number(scrArr);
+    if(!checkMultiply(scrArr) && !checkDivide(scrArr) && !checkMinus(scrArr) && displayNum !== 0 && !checkPlus(scrArr)){
+        scrArr += "-";
+        
+    } else if(displayNum === 0){
+        scrArr = "-";
+    }
+    displayNum = scrArr;
+    screen.textContent = scrArr;
+});
+const plusButton = document.querySelector("#plus");
+plusButton.addEventListener('click', function(){
+    displayNum = Number(scrArr)
+    if(!checkPlus(scrArr) && displayNum !== 0 && !checkDivide(scrArr) && !checkMultiply(scrArr)){
+        scrArr += "+";
+        screen.textContent = scrArr;
+    } else if(displayNum === 0){
+        scrArr = "0";
+        screen.textContent = scrArr;
+    }
+    
 });
 
+const add = function(num1, num2){
+    return num1 + num2;
+}
+const subtract = function(num1, num2){
+    return num1 - num2;
+}
+const multiply = function(num1, num2){
+    return num1 * num2;
+}
+const divide = function(num1, num2){
+    return num1 / num2;
+}
+
+num1 = 4;
+num2 = 33;
+let operator = "+";
+
+const operate = function(operator, num1, num2){
+    switch(operator){
+        case "+" : return add(num1, num2);
+        case "-" : return subtract(num1, num2);
+        case "*" : return multiply(num1, num2);
+        case "/" : return divide(num1, num2);
+    }
+}
+
+console.log(operate(operator, num1, num2));
 
