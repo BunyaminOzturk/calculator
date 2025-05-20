@@ -1,7 +1,6 @@
 # Simple Calculator 📟
 https://bunyaminozturk-calculator.netlify.app/
 
-### --------
 <img src="image.jpg" alt="github" width="400">
 
 This is a simple calculator made with JavaScript.
